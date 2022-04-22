@@ -1,4 +1,4 @@
-var apiKey = "6c824467b18388bbc515d17b0f0e72db";
+var apiKey = "6eee33918b42ca96a6dbde84a0ecef24";
 
 var todaySection = document.getElementById("today");
 var weekSection = document.getElementById("week");
