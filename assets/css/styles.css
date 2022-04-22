@@ -1,0 +1,12 @@
+:root {
+background-color: gray;
+}
+
+main {
+  background-color: gray;
+  margin-top: -9px;
+  border-color: gray;
+}
+a {
+  color: black;
+}
