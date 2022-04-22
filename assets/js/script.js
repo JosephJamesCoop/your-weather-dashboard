@@ -2,12 +2,14 @@ var apiKey = "6eee33918b42ca96a6dbde84a0ecef24";
 
 var todaySection = document.getElementById("today");
 var weekSection = document.getElementById("week");
-var searchedCities = document.getElementById("city-button")
+var searchedCities = document.getElementById("city-button");
+var form = document.getElementById("submitForm");
 
 form.submit(function(event) {
   event.preventDefault();
-  var city = document.getElementById("citySelection").val();
+  var city = document.getElementById("citySelection");
   if (city) {
+    consoel.log(city)
       document.location.replace("./index.html?q=" + city);
   } else {
       alert("No input recieved.");
