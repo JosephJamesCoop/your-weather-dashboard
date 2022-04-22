@@ -32,4 +32,4 @@ Application is still being developed. Loads only minor text from HTMl.
 # Preview of Appliaction Loaded Properly
 
 
-![alt text](./assets/images/your-weather-dashboard.png)
+![alt text](./assets/images/your-weather-dashboard.jpg)
