@@ -1,9 +1,8 @@
-var apiKey = "6c824467b18388bbc515d17b0f0e72db";
+var apiKey = "6eee33918b42ca96a6dbde84a0ecef24";
 
 var todaySection = document.getElementById("today");
 var weekSection = document.getElementById("week");
 var searchedCities = document.getElementById("city-button");
-var form = document.getElementById("submitForm");
 var listOfCities = [];
 
 var saveCity = function (cityName) {
@@ -26,7 +25,7 @@ var searchBtn = function (event) {
 var getCityInfo = function () {
   listOfCities = localStorage.getItem("cities");
   listOfCities = JSON.parse(listOfCities);
-  if (!listOfCities === null) {
+  if (listOfCities === null) {
     listOfCities = [];
     return;
   }
@@ -130,15 +129,15 @@ var displayTodaysWeather = function (day, city) {
         ((day.temp.morn + day.temp.eve + day.temp.night) / 3).toFixed(2) +
         "F"
     );
-    temp.className = "test"; 
+    temp.className = "card-text"; 
   var humidity = document
     .createElement("p")
     .innerHTML = ("Humidity: " + day.humidity + "%");
-    humidity.className = "test"; 
+    humidity.className = "card-text"; 
   var wind = document
     .createElement("p")
     .innerHTML = ("Wind: " + day.wind_speed + "MPH");
-    wind.className = "test"; 
+    wind.className = "card-text"; 
   var uvSpan = document.createElement("span").innerHTMl = ("day.uvi Index: " + day.uvi);
   if (day.uvi <= 2) {
     uvSpan.className = "badge badge-pill bg-success";
