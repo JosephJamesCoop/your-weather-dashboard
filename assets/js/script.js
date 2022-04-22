@@ -7,7 +7,7 @@ var form = document.getElementById("submitForm");
 var listOfCities = [];
 
 var saveCity = function (cityName) {
-  // listOfCities.push(cityName);
+
   localStorage.setItem("cities", JSON.stringify(listOfCities));
 };
 
