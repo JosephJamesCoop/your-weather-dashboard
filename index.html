@@ -20,22 +20,28 @@
       <!--Will have 2 columns one with 2 rows: search and past search results. The other with two rows today and next 5 days-->
       <div class="left">
         <!--Will have column one with 2 rows: search and past search results-->
-        <div class="search">
-          <h2>Search for a City</h2>
-        </div>
+        <h3>Search for a City</h3>
+        <form>
+            <div>
+                <label >City:</label>
+                <input id="citySelection" type="text" />
+            </div>
+            <button type="button">Search</button>
+        </form>
 
         <div class="past-search">
           <!--Will need button element that will generate off search results-->
+          <p>Previousely Searched Cities:</p>
           <ul id="city-button"></ul>
         </div>
       </div>
 
       <div class="right">
-        <div class="today">
+        <div id="today" class="today">
 
         </div>
 
-        <div class="five-day">
+        <div id="week" class="five-day">
           <ul>
             <h3>5-day Forecast:</h3>
           </ul>
