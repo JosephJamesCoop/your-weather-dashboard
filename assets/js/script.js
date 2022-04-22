@@ -6,6 +6,7 @@ var searchedCities = document.getElementById("city-button");
 var listOfCities = [];
 
 var saveCity = function (cityName) {
+
   localStorage.setItem("cities", JSON.stringify(listOfCities));
 };
 
