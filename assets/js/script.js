@@ -6,15 +6,18 @@ var searchedCities = document.getElementById("city-button");
 var form = document.getElementById("submitForm");
 var listOfCities = [];
 
-var saveCity = function () {
+var saveCity = function (cityName) {
+  listOfCities.push(cityName);
   localStorage.setItem("cities", JSON.stringify(listOfCities));
 };
 
 var searchBtn = function (event) {
-  var city = document.getElementById("citySelection");
-  if (city) {
-    console.log(city);
-    document.location.replace("./index.html?q=" + city);
+  var cityInput = document.getElementById("citySelection");
+    saveCity(cityInput.value);
+  if (cityInput.value) {
+    console.log(cityInput.value);
+    document.location.replace("./index.html?q=" + cityInput.value);
+    cityInput.value = "";
   } else {
     alert("No input recieved.");
   }
