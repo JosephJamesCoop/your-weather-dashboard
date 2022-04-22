@@ -31,10 +31,12 @@ var getCityInfo = function () {
     return;
   }
   for (var i = 0; i < listOfCities.length; i++) {
+var LI = document.createElement("li")
     var listItem = document.createElement("a");
     listItem.innerHTML = (listOfCities[i])
     listItem.setAttribute("href", "./index.html?q=" + listOfCities[i]);
-    searchedCities.append(listItem);
+    LI.appendChild(listItem)
+    searchedCities.append(LI);
   }
 };
 
@@ -104,10 +106,11 @@ var displayTodaysWeather = function (day, city) {
   var cityLocation = document.createElement("h1")
   cityLocation.innerHTML = (city);
   var iconUrl =
-    "https://openweathermap.org/img/wn/" + day.weather[0].icon + ".png";
+
+    "https://openweathermap.org/img/w/" + day.weather[0].icon + ".png";
   var weatherIcon = document
-    .createElement("img")
-    .setAttribute("src", iconUrl)
+    .createElement("img");
+    weatherIcon.src = iconUrl
   var date = document
     .createElement("h3")
     .innerHTML = (
@@ -127,19 +130,22 @@ var displayTodaysWeather = function (day, city) {
         ((day.temp.morn + day.temp.eve + day.temp.night) / 3).toFixed(2) +
         "F"
     );
+    temp.className = "test"; 
   var humidity = document
     .createElement("p")
     .innerHTML = ("Humidity: " + day.humidity + "%");
+    humidity.className = "test"; 
   var wind = document
     .createElement("p")
     .innerHTML = ("Wind: " + day.wind_speed + "MPH");
+    wind.className = "test"; 
   var uvSpan = document.createElement("span").innerHTMl = ("day.uvi Index: " + day.uvi);
   if (day.uvi <= 2) {
-    uvSpan.className = "bg-success";
+    uvSpan.className = "badge badge-pill bg-success";
 } else if (day.uvi <= 5) {
-    uvSpan.className = "bg-warning";
+    uvSpan.className = "badge badge-pill bg-warning";
 } else {
-    uvSpan.className = "bg-danger";
+    uvSpan.className = "badge badge-pill bg-danger";
 }
   var info = document
     .createElement("div")
@@ -157,8 +163,10 @@ var displayWeeklyWeather = function(week) {
   for (var i = 1; i < 6; i++) {
       var day = convert(week[i].dt);
       var weekCard = document.createElement("div");
+      weekCard.className = "card text-center bg-dark text-white"
       var iconUrl = "https://openweathermap.org/img/w/" + week[i].weather[0].icon + ".png";
-      var weatherIcon = document.createElement("img").setAttribute("src", iconUrl)
+      var weatherIcon = document.createElement("img")
+      weatherIcon.src = iconUrl
       var day = document.createElement("h4").innerHTML = ((day.getMonth() + 1)
                           + "/" + day.getDate()
                           + "/" + day.getFullYear());
@@ -166,8 +174,11 @@ var displayWeeklyWeather = function(week) {
       dateCon.append(day)
       dateCon.append(weatherIcon);
       var temp = document.createElement("p").innerHTML = ("Temp: " + ((week[i].temp.morn + week[i].temp.eve + week[i].temp.night)/3).toFixed(2) + "F");
+      temp.className = "margin";
       var humidity = document.createElement("p").innerHTML = ("Humidity: " + week[i].humidity + "%");
+      humidity.className = "margin";
       var wind = document.createElement("p").innerHTML = ("Wind: " + week[i].wind_speed + "MPH");
+      wind.className = "margin";
 
       weekCard.append(dateCon)
       weekCard.append(temp)

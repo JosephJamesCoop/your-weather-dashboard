@@ -5,45 +5,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
   <title>Your Weather Dashboard</title>
 </head>
 
 <body>
   <header>
-    <h1>Your Weather Dashboard</h1>
+    <h1 class="card text-center bg-dark text-white">Your Weather Dashboard</h1>
   </header>
 
-  <main>
-    <!--parent element to make row will have 2 columns-->
-    <div>
-      <!--Will have 2 columns one with 2 rows: search and past search results. The other with two rows today and next 5 days-->
-      <div class="left">
-        <!--Will have column one with 2 rows: search and past search results-->
+  <main class="row">
+    <div class="col-3">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col">
         <h3>Search for a City</h3>
         <form id="submitForm">
-            <div>
+            <div class="form-group">
                 <label for="citySelection">City:</label>
                 <input id="citySelection" type="text" />
             </div>
-            <button id="submit" type="button" onclick="searchBtn()">Search</button>
+            <button id="submit" type="button" class="form-control" onclick="searchBtn()">Search</button>
         </form>
-
-        <div class="past-search">
-          <!--Will need button element that will generate off search results-->
+      </div>
+      </div>
+        <div class="row">
+          <div class="col">
           <p>Previousely Searched Cities:</p>
-          <ul id="city-button"></ul>
+          <ul>
+            <li  id="city-button">
+              
+            </li>
+          </ul>
         </div>
       </div>
+</div>
+</div>
 
-      <div class="right">
-        <div id="today" class="today">
+
+      <div class="text-center mt-3">
+        <div id="today" class="border container">
 
         </div>
 
-        <div id="week" class="five-day">
-          <ul>
-            <h3>5-day Forecast:</h3>
+        <div  class="container mt-3">
+          <h3>5-day Forecast:</h3>
+          <ul id="week">
+            
           </ul>
 
         </div>
